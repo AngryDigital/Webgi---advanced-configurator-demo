@@ -1,13 +1,6 @@
-import {
-  ViewerApp,
-  AssetManagerPlugin,
-  addBasePlugins,
-  AssetManagerBasicPopupPlugin,
-  VariationConfiguratorPlugin,
-  ITexture,
-  sRGBEncoding,
-  GroundPlugin,
-} from "webgi";
+import { ViewerApp, AssetManagerPlugin, addBasePlugins, AssetManagerBasicPopupPlugin, ITexture, sRGBEncoding, GroundPlugin } from "webgi";
+
+import { VariationConfiguratorPlugin } from "./VariationConfiguratorPlugin";
 async function setupViewer() {
   // Initialize the viewer
   const viewer = new ViewerApp({
@@ -42,6 +35,7 @@ async function setupViewer() {
   config.applyVariation(config.variations.objects[1], 0, "objects");
   config.applyVariation(config.variations.objects[2], 0, "objects");
   config.applyVariation(config.variations.materials[3], 0, "materials");
+  console.log("hey");
 
   document.querySelectorAll(".objectVariation").forEach((el) => {
     el.addEventListener("click", () => {
